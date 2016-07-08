@@ -8,6 +8,7 @@ namespace CAJTLibrary
 {
     class Customer
     {
+        //johan
 
         public Cart ActiveCart
         {
