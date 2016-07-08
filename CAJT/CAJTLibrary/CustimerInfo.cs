@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CAJTLibrary
 {
-    class Customer
+    public class CustimerInfo
     {
-
-        public Cart ActiveCart
+        public string Name
         {
             get
             {
@@ -21,7 +19,7 @@ namespace CAJTLibrary
             }
         }
 
-        public List<KeyValuePair<int, string>> SavedCarts
+        public Address ShipingAddress
         {
             get
             {
@@ -33,7 +31,7 @@ namespace CAJTLibrary
             }
         }
 
-        public CustimerInfo Info
+        public Address BillingAddress
         {
             get
             {
@@ -45,9 +43,28 @@ namespace CAJTLibrary
             }
         }
 
-        public void SetActiveCart()
+        public phone Phone
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public int CustomerId
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
     }
 }

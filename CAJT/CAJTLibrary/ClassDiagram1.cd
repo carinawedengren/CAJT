@@ -1,31 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CAJTLibrary.Customer" Collapsed="true">
+  <Class Name="CAJTLibrary.Customer">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAEAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.Product">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAIAAAAQAgAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.Cart">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAACAQ=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.Order">
     <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAIEAAAwAAAAAAAAAAAAAAAAAAABAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAIEAAAwAAAAAAAAAAAAAAAAAAABAAAAAAAAAQQ=</HashCode>
       <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.CustimerInfo">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAABAAAQAAAAAABAAAAAAIAAAAAA=</HashCode>
+      <FileName>CustimerInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="CAJTLibrary.Status" Collapsed="true">
