@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CAJTLibrary
 {
-    class Customer
+    public class Customer
     {
         //johan
 
