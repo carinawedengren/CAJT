@@ -43,7 +43,7 @@ namespace CAJTLibrary
             }
         }
 
-        public phone Phone
+        public Phone Phone
         {
             get
             {

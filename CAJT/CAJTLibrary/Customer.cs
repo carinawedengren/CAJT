@@ -34,7 +34,7 @@ namespace CAJTLibrary
             }
         }
 
-        public CustimerInfo Info
+        public CustomerInfo Info
         {
             get
             {
