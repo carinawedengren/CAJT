@@ -13,7 +13,7 @@ namespace SQLUtils
     {
         const string con_str = "";
 
-        public static List<CustomerInfo> GetCustomerInfo(string CustomerId)
+        public static List<CustomerInfo> GetCustomerInfo(string customerId)
         //Denna metod ska ta in ett CustomerId(eller Id) och returnera en lista av 
         //CustomerInfo(eller en, beroende på om de ska välja först eller om vi hämtar hela listan och de sedan väljer), 
         //för kunden ska ju kunna ha flera. Då får kunden även välja vilken de vill använda.
@@ -26,7 +26,7 @@ namespace SQLUtils
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paramCustomerId = new SqlParameter("@CustomerId", SqlDbType.Int);
-            cmd.Parameters.Add("@CustomerId", SqlDbType.Int).Value = Convert.ToInt32(CustomerId);
+            cmd.Parameters.Add("@CustomerId", SqlDbType.Int).Value = Convert.ToInt32(customerId);
             try
             {
                 con.Open();
