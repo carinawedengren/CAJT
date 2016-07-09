@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CAJTLibrary
 {
-    public class CustimerInfo
+    public class CustomerInfo
     {
         public string Name
         {
@@ -19,7 +19,7 @@ namespace CAJTLibrary
             }
         }
 
-        public Address ShipingAddress
+        public Address ShippingAddress
         {
             get
             {
