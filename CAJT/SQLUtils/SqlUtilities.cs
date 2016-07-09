@@ -103,5 +103,90 @@ namespace SQLUtils
 
             return tmplist;
         }
+        public static string UpdateCustomerInfo(int customerId, string name, Address billAddr, Address shipAddr, Phone phone)
+        //Denna metod ska ta in parametrar för att uppdatera en customerInfo samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spUpdateCustomerInfo", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramCustomerId = new SqlParameter("@CustomerId", SqlDbType.Int);
+            cmd.Parameters.Add("@CustomerId", SqlDbType.Int).Value = Convert.ToInt32(customerId);
+
+            SqlParameter paramName = new SqlParameter("@Name", SqlDbType.VarChar);
+            cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = name;
+
+            //Behöver kolla hur adress ser ut eller så kopplar vi dem i en mellantabell, kom ihåg att kontrollera sqlDbType
+            SqlParameter paramBillAddr = new SqlParameter("@BillAddr", SqlDbType.VarChar);
+            cmd.Parameters.Add("@paramBillAddr", SqlDbType.VarChar).Value = billAddr;
+
+            SqlParameter paramShipAddr = new SqlParameter("@ShipAddr", SqlDbType.VarChar);
+            cmd.Parameters.Add("@ShipAddr", SqlDbType.VarChar).Value = shipAddr;
+
+            //Kontrollera datatypen
+            SqlParameter paramPhone = new SqlParameter("@Phone", SqlDbType.VarChar);
+            cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = phone;
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
+
+        public static string DeleteCustomerInfo(int id) //Det som gör just den customerinfo unik.
+        //Denna metod ska ta in parametrar för att skapa en customerInfo samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spDeleteCustomerInfo", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramCustomerId = new SqlParameter("@Id", SqlDbType.Int);
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
     }
 }
