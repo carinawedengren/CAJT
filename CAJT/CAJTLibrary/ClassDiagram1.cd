@@ -31,11 +31,11 @@
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CAJTLibrary.CustimerInfo">
+  <Class Name="CAJTLibrary.CustomerInfo">
     <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAABAAAQAAAAAABAAAAAAIAAAAAA=</HashCode>
-      <FileName>CustimerInfo.cs</FileName>
+      <HashCode>AAAAAAAAUAAAAAAAAAAAAAQAAAAAABAAAAAAIAAAAAA=</HashCode>
+      <FileName>CustomerInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="CAJTLibrary.Status" Collapsed="true">

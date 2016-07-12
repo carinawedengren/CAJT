@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CAJTLibrary
 {
-    class Customer
+    public class Customer
     {
+        //johan
 
         public Cart ActiveCart
         {
@@ -33,7 +34,7 @@ namespace CAJTLibrary
             }
         }
 
-        public CustimerInfo Info
+        public CustomerInfo Info
         {
             get
             {
