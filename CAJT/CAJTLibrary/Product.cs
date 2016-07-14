@@ -7,69 +7,36 @@ namespace CAJTLibrary
 {
     public class Product
     {
-        private int ProductId
+        #region Constructors
+        public Product() { }
+
+        public Product(int productId, int productNumber, string productName, double price, string description)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            ProductId = productId;
+            ProductNumber = productNumber;
+            ProductName = productName;
+            Price = price;
+            Description = description;
         }
+        #endregion
 
-        public int ProductNumber
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Properties
+        private int ProductId { get; set; }
 
-            set
-            {
-            }
-        }
+        public int ProductNumber { get; set; }
 
-        public string Name
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public string ProductName { get; set; }
 
-            set
-            {
-            }
-        }
+        public string Description { get; set; }
 
-        public string Description
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public double Price { get; set; }
+        #endregion
 
-            set
-            {
-            }
-        }
-
-        public double Price
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
+        #region Methods
         public int NumberInStock()
         {
-            throw new System.NotImplementedException();
+            return SQLUtils.GetNumberInStock(ProductId);
         }
+        #endregion
     }
 }
