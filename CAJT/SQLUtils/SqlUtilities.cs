@@ -617,5 +617,240 @@ namespace SQLUtils
                 return "Failed";
             }
         }
+        public static string AddAddress(string userName, string street, string city, string zipCode, string country)
+        //Denna metod ska ta in parametrar för att lägga till en address samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spAddAddress", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+
+            SqlParameter paramStreet = new SqlParameter("@Street", SqlDbType.VarChar);
+            cmd.Parameters.Add("@Street", SqlDbType.VarChar).Value = street;
+
+            SqlParameter paramCity = new SqlParameter("@City", SqlDbType.VarChar);
+            cmd.Parameters.Add("@City", SqlDbType.VarChar).Value = city;
+
+            SqlParameter paramZipCode = new SqlParameter("@ZipCode", SqlDbType.VarChar);
+            cmd.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = zipCode;
+
+            SqlParameter paramCountry = new SqlParameter("@Country", SqlDbType.VarChar);
+            cmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = country;
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
+
+        public static List<Address> GetAddress(string userName)
+        //Denna metod ska ta in ett UserName och returnera en lista av addresser som är kopplad till customer, Kom ihåg att kolla om den är tom
+
+        {
+            List<Address> tmpList = new List<Address>();
+            Address tmpAddress;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spGetAddress", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+            try
+            {
+                con.Open();
+                var myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    tmpAddress = new Address((string)myReader["Street"], (string)myReader["ZipCode"], (string)myReader["City"], (string)myReader["Country"]);
+                    tmpList.Add(tmpAddress);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return tmpList;
+        }
+
+        public static string DeleteAddress(string userName)
+        //Hur vet man vilken address(?)
+        //Denna metod ska ta in UserName och radera en address samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spDeleteAddress", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
+        public static string AddPhone(string userName, string phoneNr, string phoneType)
+        //Denna metod ska ta in parametrar för att lägga till ett telefonnr samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spAddPhone", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+
+            SqlParameter paramPhoneNr = new SqlParameter("@PhoneNr", SqlDbType.VarChar);
+            cmd.Parameters.Add("@PhoneNr", SqlDbType.VarChar).Value = phoneNr;
+
+            SqlParameter paramPhoneType = new SqlParameter("@PhoneType", SqlDbType.VarChar);
+            cmd.Parameters.Add("@PhoneType", SqlDbType.VarChar).Value = phoneType;
+
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
+
+        public static List<Phone> GetPhone(string userName)
+        //Denna metod ska ta in ett UserName och returnera en lista av telefonnr som är kopplad till customer, Kom ihåg att kolla om den är tom
+
+        {
+            List<Phone> tmpList = new List<Phone>();
+            Phone tmpPhone;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spGetPhone", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+            try
+            {
+                con.Open();
+                var myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    tmpPhone = new Phone((string)myReader["PhoneNumber"]);
+                    tmpList.Add(tmpPhone);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return tmpList;
+        }
+
+        public static string DeletePhone(string userName)
+        //Hur vet man vilket telefonNr(?)
+        //Denna metod ska ta in UserName och radera ett telefonnummer samt returnera ett meddelande om det fungerat eller ej.
+        {
+            int row;
+
+            SqlConnection con = new SqlConnection(con_str);
+            SqlCommand cmd = new SqlCommand("spDeletePhone", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
+
+            try
+            {
+                con.Open();
+                row = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //Beroende på hur det ser ut kan vi ändra meddelandena här
+            if (row > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
     }
 }
