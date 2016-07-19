@@ -6,46 +6,34 @@ using System.Text;
 namespace CAJTLibrary
 {
     public class Cart
-    {//Toni was here
-        public List<Product> Products
+    {
+        #region Constructors
+        public Cart() { }
+
+        public Cart(int cartId, string cartName, Customer customer, List<Product> products)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            CartId = cartId;
+            CartName = cartName;
+            Customer = customer;
+            Products = products;
         }
+        #endregion
 
-        public Customer Customer
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Properties
+        public int CartId { get; set; }
 
-            set
-            {
-            }
-        }
+        public string CartName { get; set; }
 
-        public int CartId
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public Customer Customer { get; set; }
 
-            set
-            {
-            }
-        }
+        public List<Product> Products { get; set; }
+        #endregion
 
+        #region Methods
         public double TotalAmunt()
         {
-            throw new System.NotImplementedException();
+            return Products.Select(p => p.Price).Sum();
         }
+        #endregion
     }
 }

@@ -8,6 +8,15 @@ namespace CAJTLibrary
 {
     public class Phone
     {
-        //Ska vi ha det som en klass eller inte?
+        #region Constructors
+        public Phone(string phoneNumber)
+        {
+            PhoneNumber = phoneNumber;
+        }
+        #endregion
+
+        #region Properties
+        public string PhoneNumber { get; set; }
+        #endregion
     }
 }

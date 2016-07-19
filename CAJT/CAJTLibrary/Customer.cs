@@ -8,47 +8,48 @@ namespace CAJTLibrary
 {
     public class Customer
     {
-        //johan
+        #region Constructors
+        public Customer() { }
 
-        public Cart ActiveCart
+        public Customer(CustomerInfo info)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            Info = info;
         }
 
-        public List<KeyValuePair<int, string>> SavedCarts
+        public Customer(CustomerInfo info, Cart activeCart) : this(info)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            ActiveCart = activeCart;
+        }
+        #endregion
 
-            set
-            {
-            }
+        #region Properties
+        public Cart ActiveCart { get; set; }
+
+        public List<KeyValuePair<int, string>> SavedCarts { get; set; }
+
+        public CustomerInfo Info { get; set; }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Fetches the cart named cartName and sets it as ActivCart.
+        /// </summary>
+        /// <param name="cartName">A string containing the user specified name of the cart.</param>
+        public void SetActiveCart(string cartName)
+        {
+            ActiveCart = SQLUtils.GetActiveCart(SavedCarts.Where(kvp => kvp.Value.CompareTo(cartName) == 0).Select(kvp => kvp.Key).First());
         }
 
-        public CustomerInfo Info
+        public string SaveActiveCart()
         {
-            get
+            if (SavedCarts.Where(kvp => kvp.Value.CompareTo(ActiveCart.CartName) == 0).Count() == 0)
             {
-                throw new System.NotImplementedException();
+                SavedCarts.Add(new KeyValuePair<int, string>(ActiveCart.CartId, ActiveCart.CartName));
+                return ActiveCart.CartName + " was added!";
             }
-
-            set
-            {
-            }
+            else
+                return ActiveCart.CartName + " is already saved!";
         }
-
-        public void SetActiveCart()
-        {
-            throw new System.NotImplementedException();
-        }
+        #endregion
     }
 }

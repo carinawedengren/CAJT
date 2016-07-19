@@ -7,83 +7,43 @@ namespace CAJTLibrary
 {
     public class Order
     {
-        public int OrderNumber
+        #region Constructors
+        public Order() { }
+
+        public Order(int orderNumber, List<Product> products, DateTime date, CustomerInfo customerInfo, Status status, bool paid)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            OrderNumber = orderNumber;
+            Products = products;
+            Date = date;
+            CustomerInfo = customerInfo;
+            Status = status;
+            Paid = paid;
         }
+        #endregion
 
-        public List<Product> Products
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Properties
+        public int OrderNumber { get; set; }
 
-            set
-            {
-            }
-        }
+        public List<Product> Products { get; set; }
 
-        public DateTime Date
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public DateTime Date { get; set; }
 
-            set
-            {
-            }
-        }
+        public CustomerInfo CustomerInfo { get; set; }
 
-        public CustomerInfo CustomerInfo
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public Status Status { get; set; }
 
-            set
-            {
-            }
-        }
+        public bool Paid { get; private set; }
+        #endregion
 
-        public Status Status
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public bool Paid
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            private set
-            {
-            }
-        }
-
+        #region Methods
         public double TotalAmount()
         {
-            throw new System.NotImplementedException();
+            return Products.Select(p => p.Price).Sum();
         }
+        #endregion
     }
+
+
     public enum Status
     {
         Pending,
