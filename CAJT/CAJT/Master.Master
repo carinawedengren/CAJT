@@ -4,17 +4,168 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Kontorsprylar AB</title>
+
+    <%------------------------ STYLESHEET ----------------------%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" />
+
+    <%------------------------ SCRIPT----------------------%>
+    <script src="scripts/jquery-2.0.0.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <%-- <form id="form1" runat="server">--%>
+    <div id="wrapper">
+        <div id="header">
+            <div id="banner">
+                <div id="logo">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/logo.png" Width="100%" Height="100%" />
+                </div>
+                <div id="headercontact">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                </div>
+
+            </div>
+
+            <div id="navigation">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="images/icon.png" height="25" width="25" /></a>
+                        </div>
+
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Start <span class="sr-only">(current)</span></a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produkter <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Kalendrar</a></li>
+                                        <li><a href="#">Pennor</a></li>
+                                        <li><a href="#">Emballage</a></li>
+                                        <li><a href="#">Papper</a></li>
+                                        <li><a href="#">Pärmar</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bläck & Toner <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">HP</a></li>
+                                                <li><a href="#">Canon</a></li>
+                                                <li><a href="#">Dell</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Om oss</a></li>
+                            </ul>
+
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-user glyph-margin"></span></a></li>
+                                <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart glyph-margin"></span></a></li>
+
+                            </ul>
+
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" id="btnSearch"><span class="glyphicon glyphicon-search"></span></button>
+                            </form>
+                        </div>
+                        <!-- / end .navbar-collapse -->
+                    </div>
+                    <!-- / end .container-fluid -->
+                </nav>
+            </div>
+        </div>
+
+        <div id="maincontent">
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2>Betalning</h2>
+                        <span class="paymenticon">
+                            <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
+                        </span>
+                        <span class="paymenticon">
+                            <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
+                        </span>
+                        <span class="paymenticon">
+                            <i class="fa fa-cc-paypal fa-3x" aria-hidden="true"></i>
+                        </span>
+                        <span class="paymenticon">
+                            <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 nodecor">
+                        <h2>Länkar</h2>
+                        <ul>
+                            <li><a href="#">Om oss</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Användarvillkor</a></li>
+                            <li><a href="#">Leverans</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 socialicon">
+                        <h2>Socialt</h2>
+                        <a href="#"><span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span></a>
+                        <a href="#"><span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                        </span></a>
+                        <a href="#"><span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span></a>
+                    </div>
+                    <div class="col-lg-3">
+                        <h2>Kontakt</h2>
+                        <div class="contactinfo">
+                            <div><i class="fa fa-map-marker fa-2x"></i> Gemträsk</div>
+                            <div><i class="fa fa-phone fa-2x"></i> 01234567</div>
+                            <div><i class="fa fa-envelope fa-2x"></i> info@kab.se</div>
+                        </div>
+
+                        <div class="directionmap">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15515.273569922703!2d22.00152071072298!3d65.87360110901034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d5f4cb0c661d85%3A0x422054ce4e05f724!2sGemtr%C3%A4sk%2C+961+91+Boden!5e0!3m2!1ssv!2sse!4v1468962174790" width="200" height="150" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="copyright">
+                <p>&copy; Kontorsprylar AB</p>
+            </div>
+        </footer>
     </div>
-    </form>
+    <%--/end wrapper--%>
+    <%--</form>--%>
 </body>
 </html>
