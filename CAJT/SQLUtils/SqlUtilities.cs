@@ -13,42 +13,39 @@ namespace SQLUtils
     {
         const string con_str = "";
 
-        public static string DeleteCustomerInfo(string userName)
-        //Denna metod ska ta in parametrar för att radera en customerInfo ur SQLservern samt returnera ett meddelande om det fungerat eller ej.
+        public static int GetNumberInStock(int productId)
+        //Denna metod tar in ett productId och returnerar hur många av denna product som finns i lagret
+        //Om den returnerar -1 Så är det fel productId
         {
-            int row;
+            int inStock = -1;
 
             SqlConnection con = new SqlConnection(con_str);
-            SqlCommand cmd = new SqlCommand("spDeleteCustomerInfo", con);
+            SqlCommand cmd = new SqlCommand("spGetInstock", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter paramUserName = new SqlParameter("@UserName", SqlDbType.VarChar);
-            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userName;
-
+            SqlParameter paramProductNumber = new SqlParameter("@ProductNumber", SqlDbType.Int);
+            cmd.Parameters.Add("@ProductNumber", SqlDbType.Int).Value = productId;
             try
             {
                 con.Open();
-                row = cmd.ExecuteNonQuery();
+                var myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    inStock++;
+                }
             }
             catch (Exception)
             {
+
                 throw;
             }
             finally
             {
                 con.Close();
             }
-            //Beroende på hur det ser ut kan vi ändra meddelandena här
-            if (row > 0)
-            {
-                return "Success";
-            }
-            else
-            {
-                return "Failed";
-            }
-        }
 
+            return inStock;
+        }
         public static string CreateProduct(string productName, int productNumber, int price, string description)
         //Denna metod ska ta in parametrar för att skapa en Product samt returnera ett meddelande om det fungerat eller ej.
         {
