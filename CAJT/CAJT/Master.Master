@@ -31,8 +31,14 @@
                     <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/logo.png" Width="100%" Height="100%" />
                 </div>
                 <div id="headercontact">
-                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x white"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse black"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x white"></i>
+                        <i class="fa fa-phone fa-stack-1x fa-inverse black"></i>
+                    </span>
                 </div>
 
             </div>
@@ -148,9 +154,9 @@
                     <div class="col-lg-3">
                         <h2>Kontakt</h2>
                         <div class="contactinfo">
-                            <div><i class="fa fa-map-marker fa-2x"></i> Gemträsk</div>
-                            <div><i class="fa fa-phone fa-2x"></i> 01234567</div>
-                            <div><i class="fa fa-envelope fa-2x"></i> info@kab.se</div>
+                            <div><i class="fa fa-map-marker fa-2x"></i>&nbsp;Gemträsk</div>
+                            <div><i class="fa fa-phone fa-2x"></i>&nbsp;01234567</div>
+                            <div><i class="fa fa-envelope fa-2x"></i>&nbsp;info@kab.se</div>
                         </div>
 
                         <div class="directionmap">
