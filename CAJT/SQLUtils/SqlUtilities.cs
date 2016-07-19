@@ -11,7 +11,7 @@ namespace SQLUtils
 {
     public class SqlUtilities
     {
-        const string con_str = "";
+        const string con_str = "Data Source=cajt.database.windows.net;Initial Catalog=CAJT;Integrated Security=False;User ID=cajt;Password=********;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public static int GetNumberInStock(int productId)
         //Denna metod tar in ett productId och returnerar hur många av denna product som finns i lagret
