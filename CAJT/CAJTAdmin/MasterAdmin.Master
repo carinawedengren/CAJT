@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterAdmin.master.cs" Inherits="CAJTAdmin.MasterAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Kontorsprylar AB</title>
+    <%--Stylesheets--%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styleAdmin.css" rel="stylesheet" />
+
+    <%--Scripts--%>
+    <script src="Scripts/jquery-1.9.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="row page-header">
+            <div class="col-sm-1"></div>
+            <div class="col-lg-10" id="banner">
+                <div class="col-lg-4" id="logo">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/icon.png" Width="100%" Height="100%" />
+                </div>
+                <div class="col-lg-7" ><div id="title">Kontorsprylar AB</div></div>
+                <div class="col-lg-1"></div>
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="mainholder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
