@@ -7,64 +7,27 @@ namespace CAJTLibrary
 {
     public class CustomerInfo
     {
-        public string Name
+        #region Constructors
+        public CustomerInfo(int customerId, string name, Address shippingAddress, Address billingAddress, Phone phone)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            CustomerId = customerId;
+            Name = name;
+            ShippingAddress = shippingAddress;
+            BillingAddress = billingAddress;
+            Phone = phone;
         }
+        #endregion
 
-        public Address ShippingAddress
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Properties
+        public int CustomerId { get; set; }
 
-            set
-            {
-            }
-        }
+        public string Name { get; set; }
 
-        public Address BillingAddress
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public Address ShippingAddress { get; set; }
 
-            set
-            {
-            }
-        }
+        public Address BillingAddress { get; set; }
 
-        public Phone Phone
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public int CustomerId
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public Phone Phone { get; set; }
+        #endregion
     }
 }
