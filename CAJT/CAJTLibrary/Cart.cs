@@ -10,11 +10,11 @@ namespace CAJTLibrary
         #region Constructors
         public Cart() { }
 
-        public Cart(int cartId, string cartName, Customer customer, List<Product> products)
+        public Cart(int cartId, string cartName, CustomerInfo customerInfo, List<Product> products)
         {
             CartId = cartId;
             CartName = cartName;
-            Customer = customer;
+            CustomerInfo = customerInfo;
             Products = products;
         }
         #endregion
@@ -24,7 +24,7 @@ namespace CAJTLibrary
 
         public string CartName { get; set; }
 
-        public Customer Customer { get; set; }
+        public CustomerInfo CustomerInfo { get; set; }
 
         public List<Product> Products { get; set; }
         #endregion
