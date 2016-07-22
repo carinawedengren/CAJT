@@ -391,6 +391,7 @@ namespace SQLUtils
         //Denna metod ska ta in ett UserName och activeCartId sant returnerar en Customer 
         {
             Customer tmpCustomer = new Customer();
+            
             SqlConnection con = new SqlConnection(con_str);
             SqlCommand cmd = new SqlCommand("spGetCustomer", con);
             cmd.CommandType = CommandType.StoredProcedure;
