@@ -84,6 +84,12 @@ p {
     color:white;
 }
 
+.mailtext, .phonetext {
+    visibility: hidden;
+}
+
+
+
 /*********************************** CONTENT ********************************/
 
 #content {

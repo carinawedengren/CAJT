@@ -31,14 +31,14 @@
                     <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/logo.png" Width="100%" Height="100%" />
                 </div>
                 <div id="headercontact">
-                    <span class="fa-stack fa-lg">
+                    <a href=" " title="info@kab.se"><span class="fa-stack fa-lg emailspan">
                         <i class="fa fa-circle fa-stack-2x white"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse black"></i>
-                    </span>
-                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse black"></i>                       
+                    </span></a>                    
+                    <a href=" " title="01234567"><span class="fa-stack fa-lg phonespan">
                         <i class="fa fa-circle fa-stack-2x white"></i>
-                        <i class="fa fa-phone fa-stack-1x fa-inverse black"></i>
-                    </span>
+                        <i class="fa fa-phone fa-stack-1x fa-inverse black"></i>                        
+                    </span></a>
                 </div>
 
             </div>
