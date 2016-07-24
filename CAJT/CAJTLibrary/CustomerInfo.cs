@@ -8,8 +8,9 @@ namespace CAJTLibrary
     public class CustomerInfo
     {
         #region Constructors
-        public CustomerInfo(int customerId, string name, Address shippingAddress, Address billingAddress, Phone phone)
+        public CustomerInfo(string userName, int customerId, string name, Address shippingAddress, Address billingAddress, Phone phone)
         {
+            UserName = userName;
             CustomerId = customerId;
             Name = name;
             ShippingAddress = shippingAddress;
@@ -19,6 +20,7 @@ namespace CAJTLibrary
         #endregion
 
         #region Properties
+        public string UserName { get; set; }
         public int CustomerId { get; set; }
 
         public string Name { get; set; }
