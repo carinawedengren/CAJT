@@ -6,21 +6,21 @@
   <Class Name="CAJTLibrary.Customer">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAEAAAAA=</HashCode>
+      <HashCode>AICAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAEAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.Product">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAIAAAAQAgAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>EAAAIAAAAQAgAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAA=</HashCode>
       <FileName>Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.Cart">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAACQQ=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,9 +32,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CAJTLibrary.CustomerInfo">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAUAAAAAAAAAAAAAQAAAAAABAAAAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAUAAAAAAAAAAAAAQAAAAAABAAAQAAIAAAAAA=</HashCode>
       <FileName>CustomerInfo.cs</FileName>
     </TypeIdentifier>
   </Class>

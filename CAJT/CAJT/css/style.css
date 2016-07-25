@@ -77,11 +77,11 @@ p {
 }
 
 .black {
-    color:black;
+    color: black;
 }
 
 .white {
-    color:white;
+    color: white;
 }
 
 .mailtext, .phonetext {
@@ -182,3 +182,19 @@ footer {
         font-family: Consolas;
         padding-bottom: 1em;
     }
+
+
+/************************ Media Queries ***************************/
+
+@media (max-width: 767px) {
+    #wrapper {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    #banner {
+        margin-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
