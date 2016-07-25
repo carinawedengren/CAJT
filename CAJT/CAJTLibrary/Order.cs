@@ -10,7 +10,7 @@ namespace CAJTLibrary
         #region Constructors
         public Order() { }
 
-        public Order(int orderNumber, List<Product> products, DateTime date, CustomerInfo customerInfo, Status status, bool paid)
+        public Order(int orderNumber, List<Product> products, DateTime date, CustomerInfo customerInfo, Status status, bool paid, PaymentMethod paymentMethod)
         {
             OrderNumber = orderNumber;
             Products = products;
@@ -18,6 +18,7 @@ namespace CAJTLibrary
             CustomerInfo = customerInfo;
             Status = status;
             Paid = paid;
+            PaymentMethod = paymentMethod;
         }
         #endregion
 
@@ -33,6 +34,8 @@ namespace CAJTLibrary
         public Status Status { get; set; }
 
         public bool Paid { get; private set; }
+
+        public PaymentMethod PaymentMethod { get; set; }
         #endregion
 
         #region Methods
@@ -40,9 +43,17 @@ namespace CAJTLibrary
         {
             return Products.Select(p => p.Price).Sum();
         }
+
+        public void Pay() { }
         #endregion
     }
 
+
+    public enum PaymentMethod
+    {
+        CreditCard
+        
+    }
 
     public enum Status
     {

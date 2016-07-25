@@ -9,9 +9,12 @@ namespace CAJTLibrary
     public class Customer
     {
         #region Constructors
-        public Customer() { }
+        public Customer()
+        {
+            ActiveCart = new Cart();
+        }
 
-        public Customer(CustomerInfo info)
+        public Customer(CustomerInfo info) : this()
         {
             Info = info;
         }
