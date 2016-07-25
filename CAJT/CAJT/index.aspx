@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
 
     <div id="content">
-        <h1>Välkommen till Kontorsprylar AB</h1>
+        <h1>Välkommen till Kontorsprylar AB !</h1>
 
         <div class="headerLineContainer"><h2>Favoritkategorier</h2></div>
 
