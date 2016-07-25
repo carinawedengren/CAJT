@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAJTLibrary.Address" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAIAAEAAAAA=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.Cart" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAACQQ=</HashCode>
+      <FileName>Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.Customer" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAEAAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.CustomerInfo" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAAAAAAAAAAAAQAAAAAABAAAQAAIAAAAAA=</HashCode>
+      <FileName>CustomerInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.Order" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIEAAAwAAAAAAAAAAAAAAAAAAABAAAAAAAAAQQ=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.Phone" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Phone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAJTLibrary.Product">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAIAAAAQAgAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CAJTLibrary.Status">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABAAIAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
